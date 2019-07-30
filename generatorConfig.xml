@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  <context id="context1"  targetRuntime="MyBatis3simple">
+    <jdbcConnection connectionURL="jdbc:mysql://localhost:3306/DandongCountry" driverClass="com.mysql.jdbc.Driver" password="root" userId="root" />
+    <javaModelGenerator targetPackage="cn.dandong.entity" targetProject="DandongCountry" />
+    <sqlMapGenerator targetPackage="cn.dandong.mapper" targetProject="DandongCountry" />
+    <javaClientGenerator targetPackage="cn.dandong.mapper" targetProject="DandongCountry" type="XMLMAPPER" />
+    
+    <!-- <table schema="root" tableName="county">
+      <columnOverride column="cid" property="id" />
+    </table> -->
+    
+    <!-- <table schema="root" tableName="user">
+      <columnOverride column="uid" property="id" />
+    </table> -->
+    
+    
+    <!-- <table schema="root" tableName="ethnic">
+      <columnOverride column="eid" property="id" />
+    </table> -->
+    
+    <!-- <table schema="root" tableName="town">
+      <columnOverride column="cid" property="county" javaType="cn.dandong.entity.County"/>
+    </table> -->
+    
+    
+    <!-- <table schema="root" tableName="villagebasicinfo">
+      <columnOverride column="tid" property="town" javaType="cn.dandong.entity.Town"/>
+    </table> -->
+    
+    <!-- <table schema="root" tableName="villageethnic1">
+      <columnOverride column="vid" property="villagebasicinfo" javaType="cn.dandong.entity.Villagebasicinfo"/>
+      <columnOverride column="eid" property="ethnic" javaType="cn.dandong.entity.Ethnic"/>
+    </table> -->
+    
+    <table schema="root" tableName="villageethnic">
+      <columnOverride column="vid" property="villagebasicinfo" javaType="cn.dandong.entity.Villagebasicinfo"/>
+    </table>
+    
+  </context>
+</generatorConfiguration>
