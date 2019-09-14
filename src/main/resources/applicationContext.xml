@@ -7,7 +7,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 	<!-- 扫描业务逻辑组件 -->
-	<context:component-scan base-package="com.neu.service"></context:component-scan>
+	<context:component-scan base-package="cn.dandong.service"></context:component-scan>
 	<!-- 用来读取属性文件 -->
 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
@@ -33,7 +33,7 @@
 	</bean>
 	<!-- mapper扫描器，用来扫描mybatis的组件 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.neu.mapper"></property>
+		<property name="basePackage" value="cn.dandong.mapper"></property>
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryBean"></property>
 	</bean>
 </beans>

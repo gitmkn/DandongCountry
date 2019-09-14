@@ -15,9 +15,9 @@ public class CountyServiceImpl implements CountyService{
 	private CountyMapper countyMapper;
 	
 	@Override
-	public int deleteByPrimaryKey(Integer id) {
+	public int deleteByPrimaryKey(Integer cid) {
 		// TODO Auto-generated method stub
-		return countyMapper.deleteByPrimaryKey(id);
+		return countyMapper.deleteByPrimaryKey(cid);
 	}
 
 	@Override
@@ -27,9 +27,9 @@ public class CountyServiceImpl implements CountyService{
 	}
 
 	@Override
-	public County selectByPrimaryKey(Integer id) {
+	public County selectByPrimaryKey(Integer cid) {
 		// TODO Auto-generated method stub
-		return countyMapper.selectByPrimaryKey(id);
+		return countyMapper.selectByPrimaryKey(cid);
 	}
 
 	@Override
@@ -42,6 +42,15 @@ public class CountyServiceImpl implements CountyService{
 	public int updateByPrimaryKey(County record) {
 		// TODO Auto-generated method stub
 		return countyMapper.updateByPrimaryKey(record);
+	}
+
+	/**
+	 * 统计区的数量
+	 */
+	@Override
+	public int countCounty() {
+		// TODO Auto-generated method stub
+		return countyMapper.countCounty();
 	}
 
 }

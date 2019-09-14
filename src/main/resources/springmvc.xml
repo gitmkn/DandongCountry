@@ -7,7 +7,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
 	<!-- 组件扫描：扫描业务逻辑控制器 -->
-	<context:component-scan base-package="com.neu.controller"></context:component-scan>
+	<context:component-scan base-package="cn.dandong.controller"></context:component-scan>
 	<!-- 注解驱动 -->
 	<mvc:annotation-driven></mvc:annotation-driven>
 	<!-- 视图解析器，把逻辑视图名转换为物理视图名 -->
@@ -17,4 +17,23 @@
 		<!-- 物理视图后缀 -->
 		<property name="suffix" value=".jsp"></property>
 	</bean>
+	
+	<!--文件访问配置-->
+    <mvc:resources mapping="/assets/**" location="/assets/"></mvc:resources>
+    
+    <!-- 拦截器配置 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!-- 拦截 -->
+            <mvc:mapping path="/county/**"/>
+            <mvc:mapping path="/index/**"/>
+            <mvc:mapping path="/town/**"/>
+            <mvc:mapping path="/village/**"/>
+            <!-- 不拦截 -->
+            <mvc:exclude-mapping path="/login/**"></mvc:exclude-mapping>
+            <!-- 拦截器路径 -->
+            <bean class="cn.dandong.interceptor.LoginInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+    
 </beans>

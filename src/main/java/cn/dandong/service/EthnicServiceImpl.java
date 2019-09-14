@@ -6,40 +6,42 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cn.dandong.entity.Ethnic;
+import cn.dandong.mapper.EthnicMapper;
 
 @Service
 public class EthnicServiceImpl implements EthnicService{
 
 	@Autowired
-	private EthnicService ethnicService;
+	private EthnicMapper ethnicMapper;
+	
 	@Override
-	public int deleteByPrimaryKey(Integer id) {
+	public int deleteByPrimaryKey(Integer eid) {
 		// TODO Auto-generated method stub
-		return ethnicService.deleteByPrimaryKey(id);
+		return ethnicMapper.deleteByPrimaryKey(eid);
 	}
 
 	@Override
 	public int insert(Ethnic record) {
 		// TODO Auto-generated method stub
-		return ethnicService.insert(record);
+		return ethnicMapper.insert(record);
 	}
 
 	@Override
-	public Ethnic selectByPrimaryKey(Integer id) {
+	public Ethnic selectByPrimaryKey(Integer eid) {
 		// TODO Auto-generated method stub
-		return ethnicService.selectByPrimaryKey(id);
+		return ethnicMapper.selectByPrimaryKey(eid);
 	}
 
 	@Override
 	public List<Ethnic> selectAll() {
 		// TODO Auto-generated method stub
-		return ethnicService.selectAll();
+		return ethnicMapper.selectAll();
 	}
 
 	@Override
 	public int updateByPrimaryKey(Ethnic record) {
 		// TODO Auto-generated method stub
-		return ethnicService.updateByPrimaryKey(record);
+		return ethnicMapper.updateByPrimaryKey(record);
 	}
 
 }

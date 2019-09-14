@@ -2,26 +2,26 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
   <context id="context1"  targetRuntime="MyBatis3simple">
-    <jdbcConnection connectionURL="jdbc:mysql://localhost:3306/DandongCountry" driverClass="com.mysql.jdbc.Driver" password="root" userId="root" />
+    <jdbcConnection connectionURL="jdbc:mysql://localhost:3306/ddcountry" driverClass="com.mysql.jdbc.Driver" password="root" userId="root" />
     <javaModelGenerator targetPackage="cn.dandong.entity" targetProject="DandongCountry" />
     <sqlMapGenerator targetPackage="cn.dandong.mapper" targetProject="DandongCountry" />
     <javaClientGenerator targetPackage="cn.dandong.mapper" targetProject="DandongCountry" type="XMLMAPPER" />
     
     <!-- <table schema="root" tableName="county">
-      <columnOverride column="cid" property="id" />
+      <columnOverride column="cid" property="cid" />
     </table> -->
     
-    <!-- <table schema="root" tableName="user">
-      <columnOverride column="uid" property="id" />
+    <!-- <table schema="root" tableName="town">
+      <columnOverride column="cid" property="county" />
     </table> -->
     
     
     <!-- <table schema="root" tableName="ethnic">
-      <columnOverride column="eid" property="id" />
+      <columnOverride column="eid" property="eid" />
     </table> -->
     
-    <!-- <table schema="root" tableName="town">
-      <columnOverride column="cid" property="county" javaType="cn.dandong.entity.County"/>
+    <!-- <table schema="root" tableName="village">
+      <columnOverride column="tid" property="town" javaType="cn.dandong.entity.Town"/>
     </table> -->
     
     
@@ -34,8 +34,37 @@
       <columnOverride column="eid" property="ethnic" javaType="cn.dandong.entity.Ethnic"/>
     </table> -->
     
-    <table schema="root" tableName="villageethnic">
+    <!-- <table schema="root" tableName="villageethnic">
       <columnOverride column="vid" property="villagebasicinfo" javaType="cn.dandong.entity.Villagebasicinfo"/>
+    </table> -->
+    
+    
+    <!-- <table schema="root" tableName="townethnic1">
+      <columnOverride column="tid" property="town" javaType="cn.dandong.entity.Town"/>
+      <columnOverride column="eid" property="ethnic" javaType="cn.dandong.entity.Ethnic"/>
+    </table> -->
+    
+    <!-- <table schema="root" tableName="townethnic">
+      <columnOverride column="tid" property="town" javaType="cn.dandong.entity.Town"/>
+    </table> -->
+    
+    
+    <!-- <table schema="root" tableName="villageproduct">
+      <columnOverride column="vid" property="village" javaType="cn.dandong.entity.Village"/>
+    </table> -->
+    
+    <!-- <table schema="root" tableName="villageproductdetail">
+      <columnOverride column="vpid" property="villageproduct" javaType="cn.dandong.entity.Villageproduct"/>
+    </table> -->
+    
+    
+    <!-- <table schema="root" tableName="tvrelations">
+      <columnOverride column="tvid0" property="town_village" javaType="cn.dandong.entity.TownVillage"/>
+      <columnOverride column="tvid1" property="town_village" javaType="cn.dandong.entity.TownVillage"/>
+    </table> -->
+    
+    <table schema="root" tableName="user">
+      <columnOverride column="uid" property="uid" />
     </table>
     
   </context>
